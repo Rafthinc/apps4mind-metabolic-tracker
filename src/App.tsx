@@ -513,7 +513,6 @@ const Apps4MindFinal: React.FC = () => {
                     />
                   </AreaChart>
                 </ResponsiveContainer>
-                );
               </div>
 
               <div className="mt-8 grid grid-cols-3 gap-4 border-t pt-8">
