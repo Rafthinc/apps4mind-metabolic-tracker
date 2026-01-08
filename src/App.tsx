@@ -1,15 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
-import {
-  Activity,
-  Flame,
-  Utensils,
-  TrendingDown,
-  Clock,
-  Dumbbell,
-  UserCog,
-  Save,
-  Trash2,
-} from "lucide-react";
+import { Clock, Dumbbell, UserCog, Save, Trash2 } from "lucide-react";
 import {
   AreaChart,
   Area,
@@ -21,13 +11,7 @@ import {
   ReferenceLine,
 } from "recharts";
 
-import {
-  AlertCircle,
-  HelpCircle,
-  XCircle,
-  CheckCircle2,
-  Hourglass,
-} from "lucide-react";
+import { AlertCircle, HelpCircle, XCircle, Hourglass } from "lucide-react";
 
 interface UserProfile {
   weight: number;
