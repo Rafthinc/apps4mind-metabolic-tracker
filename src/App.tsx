@@ -233,7 +233,7 @@ const Apps4MindFinal: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 p-4 md:p-8 font-sans text-slate-900">
+    <div className="min-h-screen bg-slate-50 p-4 md:p-8 font-sans text-slate-900 overflow-x-hidden">
       <div className="max-w-6xl mx-auto space-y-6">
         <header className="flex justify-between items-center">
           <div>
@@ -335,12 +335,14 @@ const Apps4MindFinal: React.FC = () => {
               <label className="text-xs font-bold text-slate-400 uppercase mb-3 block">
                 Adaugă Masă
               </label>
-              <div className="flex gap-2">
+
+              {/* Am schimbat flex în flex-col pe mobil și flex-row pe ecrane mici (sm) în sus */}
+              <div className="flex flex-col sm:flex-row gap-2">
                 <input
                   type="number"
                   value={inputCalories}
                   onChange={(e) => setInputCalories(e.target.value)}
-                  className="flex-1 bg-slate-50 border-none rounded-2xl px-4 py-3"
+                  className="flex-1 bg-slate-50 border-none rounded-2xl px-4 py-3 focus:ring-2 focus:ring-indigo-500 min-w-0"
                   placeholder="kcal"
                 />
                 <button
@@ -348,14 +350,15 @@ const Apps4MindFinal: React.FC = () => {
                     setCaloriesEaten((prev) => prev + Number(inputCalories));
                     setInputCalories("");
                   }}
-                  className="bg-orange-500 text-white px-6 rounded-2xl font-bold"
+                  className="bg-orange-500 text-white px-6 py-3 rounded-2xl font-bold hover:bg-orange-600 transition-colors whitespace-nowrap"
                 >
                   Adaugă
                 </button>
               </div>
+
               <button
                 onClick={() => setCaloriesEaten(0)}
-                className="mt-4 text-[10px] text-rose-400 font-bold uppercase flex items-center gap-1"
+                className="mt-4 text-[10px] text-rose-400 font-bold uppercase flex items-center gap-1 hover:text-rose-600 transition-colors"
               >
                 <Trash2 size={12} /> Resetează ziua
               </button>
